@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AXHelper", "AXHelper\AXHelper.csproj", "{AE64D8C8-55AC-48B5-B982-6207263A8BFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AXHelper.Tests", "AXHelper.Tests\AXHelper.Tests.csproj", "{0D3C5F2E-1050-4713-8F2A-6DDCCA9BFA1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE64D8C8-55AC-48B5-B982-6207263A8BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE64D8C8-55AC-48B5-B982-6207263A8BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE64D8C8-55AC-48B5-B982-6207263A8BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE64D8C8-55AC-48B5-B982-6207263A8BFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D3C5F2E-1050-4713-8F2A-6DDCCA9BFA1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D3C5F2E-1050-4713-8F2A-6DDCCA9BFA1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D3C5F2E-1050-4713-8F2A-6DDCCA9BFA1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D3C5F2E-1050-4713-8F2A-6DDCCA9BFA1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
