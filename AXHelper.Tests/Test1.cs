@@ -39,4 +39,14 @@ public sealed class Test1
     {
         RandomString(2000).PrintLn();
     }
+
+    [TestMethod]
+    public void RemoveLastTest()
+    {
+        var s = new[]{1, 2, 3, 4, 45, 5};
+        foreach (var i in s.RemoveLast())
+        {
+            i.ToString().Print();
+        }
+    }
 }

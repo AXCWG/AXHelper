@@ -2,6 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using JetBrains.Annotations;
+using Microsoft.Data.Sqlite;
 
 namespace AXHelper.Extensions;
 
@@ -106,6 +107,32 @@ public static class StringExtensions
         
 
         
+    }
+    extension<T>(IEnumerable<T> source)
+    {
+        public IEnumerable<T> RemoveLast()
+        {
+            return source.ToArray()[..^1];
+        }
+    }
+
+    extension(IEnumerable<string> source)
+    {
+        public string CombineWith(char separator)
+        {
+            return string.Join(separator, source);
+        }
+    }
+
+    extension(string pathToDb)
+    {
+        public void CreateDirectoryOfDataSource()
+        {
+            var pathToCreate = new SqliteConnectionStringBuilder(pathToDb).DataSource
+                .Split(['/', '\\'], StringSplitOptions.TrimEntries).RemoveLast().CombineWith(Path.DirectorySeparatorChar); 
+            Directory.CreateDirectory(pathToCreate);
+            
+        }
     }
     
     
