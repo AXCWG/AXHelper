@@ -104,7 +104,21 @@ public static class StringExtensions
             }
             return new string(sChar);
         }
-        
+
+        public string ConcatEllipsisByChar(int count)
+        {
+            if (count > source.Length)
+            {
+                return source; 
+            }
+            var s = source[0..count];
+            return s + (source.Equals(s) ? "" : "...");
+        }
+        public string ConcatEllipsisByWord(int count)
+        {
+            var strings = source.Split(' ', StringSplitOptions.TrimEntries)[0..count];
+            return strings.Combine(' ') + ( source.Equals(strings.Combine(' ')) ? "" :  "...");
+        }
 
         
     }
@@ -118,9 +132,13 @@ public static class StringExtensions
 
     extension(IEnumerable<string> source)
     {
-        public string CombineWith(char separator)
+        public string Combine()
         {
-            return string.Join(separator, source);
+            return string.Join(null, source);
+        }
+        public string Combine(char separatorWith)
+        {
+            return string.Join(separatorWith, source);
         }
     }
 
@@ -129,7 +147,7 @@ public static class StringExtensions
         public void CreateDirectoryOfDataSource()
         {
             var pathToCreate = new SqliteConnectionStringBuilder(pathToDb).DataSource
-                .Split(['/', '\\'], StringSplitOptions.TrimEntries).RemoveLast().CombineWith(Path.DirectorySeparatorChar); 
+                .Split(['/', '\\'], StringSplitOptions.TrimEntries).RemoveLast().Combine(Path.DirectorySeparatorChar); 
             Directory.CreateDirectory(pathToCreate);
             
         }
