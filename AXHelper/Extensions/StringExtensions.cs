@@ -144,12 +144,12 @@ public static class StringExtensions
 
     extension(string pathToDb)
     {
-        public void CreateDirectoryOfDataSource()
+        public string CreateDirectoryOfDataSource()
         {
             var pathToCreate = new SqliteConnectionStringBuilder(pathToDb).DataSource
                 .Split(['/', '\\'], StringSplitOptions.TrimEntries).RemoveLast().Combine(Path.DirectorySeparatorChar); 
             Directory.CreateDirectory(pathToCreate);
-            
+            return pathToDb;
         }
     }
     
